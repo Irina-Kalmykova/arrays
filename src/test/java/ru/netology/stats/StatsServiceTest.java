@@ -1,4 +1,4 @@
-package ru.netology.stats.services;
+package ru.netology.stats;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -7,22 +7,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StatsServiceTest {
     @Test
-    public void testTotalSales() {
+    public void testTotalSale() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        long actual = service.calculateTotalSales(sales);
+        long actual = service.calculateTotalSale(sales);
         long expected = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void testAverageSales() {
+    public void testAverageSale() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        long actual = service.calculateAverageSales(sales);
+        long actual = service.calculateAverageSale(sales);
         long expected = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
 
         Assertions.assertEquals(expected, actual);
@@ -33,7 +33,7 @@ class StatsServiceTest {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        long actual = service.calculateMonthMaxSales(sales);
+        long actual = service.calculateMonthMaxSale(sales);
         long expected = 8;
 
         Assertions.assertEquals(expected, actual);
@@ -44,7 +44,7 @@ class StatsServiceTest {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        long actual = service.calculateMonthMinSales(sales);
+        long actual = service.calculateMonthMinSale(sales);
         long expected = 9;
 
         Assertions.assertEquals(expected, actual);
@@ -63,10 +63,10 @@ class StatsServiceTest {
 
     @Test
     public void testOverAverage() {
-        StatsService service = new StatsService():
+        StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        long actual = service.calculateUnderAverage(sales);
+        long actual = service.calculateOverAverage(sales);
         long expected = 5;
 
         Assertions.assertEquals(expected, actual);
